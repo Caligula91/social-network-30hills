@@ -1,0 +1,12 @@
+h5,
+button {
+  margin-top: 25px;
+}
+.user-results {
+  margin-top: 50px;
+}
+
+.no-results {
+  text-align: center;
+  padding-top: 10px;
+}

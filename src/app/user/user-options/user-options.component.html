@@ -1,0 +1,27 @@
+<form #userForm="ngForm">
+    <div class="form-row">
+        <div class="col-6 col-sm-7">
+            <div class="form-group">
+                <label for="users">Select user:</label>
+                <select class="form-control" name="user" ngModel>
+                    <option 
+                        *ngFor="let user of users$ | async"
+                        [value]="user.id">
+                        ({{ user.id }}) {{ user.firstName }} {{ user.surname }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="options">Select option:</label>
+                <select class="form-control" name="option" ngModel>
+                    <option value="friends">Friends</option>
+                    <option value="friendsOfFriends">Friends of Friends</option>
+                    <option value="suggestedFriends">Suggested Friends</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+</form>
