@@ -1,6 +1,6 @@
 <form #userForm="ngForm">
     <div class="form-row">
-        <div class="col-6 col-sm-7">
+        <div class="col-6">
             <div class="form-group">
                 <label for="users">Select user:</label>
                 <select class="form-control" name="user" ngModel>
@@ -21,6 +21,9 @@
                     <option value="suggestedFriends">Suggested Friends</option>
                 </select>
             </div>
+        </div>
+        <div class="col-1">
+            <button type="button" (click)="onRefresh()" class="btn-refresh"><img src="assets/refresh.png" alt=""></button>
         </div>
 
     </div>

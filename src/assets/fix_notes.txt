@@ -2,3 +2,54 @@ USER WITH ID: 16 HAS FRIENDS: [18, 20],
 BUT USER WITH ID: 18 HAS FRIENDS: [17] (FRIEND WITH ID: 16 IS MISSING!)
 
 IN FIXED VERSION, I ADDED MISSING FRIEND(16) TO FRIENDS LIST OF USER(18)
+
+BEFORE:
+
+  {
+    "id": 16,
+    "firstName": "Daren",
+    "surname": "Slater",
+    "age": 28,
+    "gender": "male",
+    "friends": [
+      18,
+      20
+    ]
+  },
+  {
+    "id": 18,
+    "firstName": "Marie",
+    "surname": "D",
+    "age": 28,
+    "gender": "female",
+    "friends": [
+      17
+    ]
+  }
+
+---------------------------------------------------------------------------
+
+AFTER:
+
+  {
+    "id": 16,
+    "firstName": "Daren",
+    "surname": "Slater",
+    "age": 28,
+    "gender": "male",
+    "friends": [
+      18,
+      20
+    ]
+  },
+  {
+    "id": 18,
+    "firstName": "Marie",
+    "surname": "D",
+    "age": 28,
+    "gender": "female",
+    "friends": [
+      16,  
+      17
+    ]
+  },

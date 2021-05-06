@@ -1,0 +1,11 @@
+.btn-refresh {
+  border: none;
+  background-color: transparent;
+  padding: 0 0;
+  margin-top: 35px;
+  margin-left: 5px;
+}
+
+.btn-refresh img:active {
+  transform: scale(0.8);
+}

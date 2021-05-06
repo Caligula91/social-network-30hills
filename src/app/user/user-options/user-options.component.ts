@@ -26,13 +26,26 @@ export class UserOptionsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.users$ = this.userService.users$;
 
-    this.clearOptionsSubscription = this.userService.clearOptions$.subscribe(() => this.userForm.reset());
+    // clearing form by setting values to empty string instead of reseting form
+    this.clearOptionsSubscription = this.userService.clearOptions$.subscribe(() => {
+      this.userForm.setValue({
+        user: '',
+        option: '',
+      })
+    });
 
+    // emmiting selected options
     this.formChangesSubscription = this.userForm.form.valueChanges.subscribe(formValue => {
-      if (formValue.user && formValue.option) {
-        this.userService.selectedOptions$.next({ userId: formValue.user, option: formValue.option });
-      }
+      this.userService.selectedOptions$.next({ userId: formValue.user, option: formValue.option });
     })
+  }
+
+  /**
+   * FETCH USERS FROM FILE
+   */
+  onRefresh(): void {
+    this.userService.clearOptions$.next();
+    this.userService.fetchUsers();
   }
 
 }

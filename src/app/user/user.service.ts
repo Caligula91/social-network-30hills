@@ -16,7 +16,7 @@ export class UserService {
   users$ = new BehaviorSubject<User[]>([]);
 
   // selected user and option to show
-  selectedOptions$ = new Subject<{ userId: number, option: string }>();
+  selectedOptions$ = new Subject<{ userId: string, option: string }>();
   clearOptions$ = new Subject<void>();
 
   constructor(private http: HttpClient) { }

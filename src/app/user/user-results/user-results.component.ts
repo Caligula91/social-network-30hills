@@ -23,8 +23,9 @@ export class UserResultsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.optionsSub = this.userService.selectedOptions$.subscribe(options => {
-      const userId = +options.userId;
       this.clearFields();
+      if (!options.userId || !options.option) return;
+      const userId = +options.userId;
       switch(options.option) {
         case 'friends': {
           this.userFriends = this.userService.getUserFriends(userId);
