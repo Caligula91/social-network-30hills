@@ -1,27 +1,29 @@
 # SocialNetwork
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Assignment from 30Hills for Internship, Developer Test.
 
-## Development server
+Angular app - version 11.1.2.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Task
 
-## Code scaffolding
+Input is dataset 'assets/data.json' representing people, in the form of a social graph.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Taks is to write functions that returns:
 
-## Build
+1. User's direct friends - users that are directly connected to user.
+2. User's friends of friends - direct user friends are excluded from this group.
+3. User's suggested friends - same as friends of friends but must contain 2+ mutual friends.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Solution
 
-## Running unit tests
+I used maps and sets to solve this task.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Main logic is placed in '/src/app/user/user.service.ts' file.
 
-## Running end-to-end tests
+### Bugs
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Small bug in 'data.json' file.
 
-## Further help
+File 'data_fixed.json' is fixed version.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Further details in 'assets/fix_notes.txt'.
